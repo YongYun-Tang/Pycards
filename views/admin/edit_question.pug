@@ -1,0 +1,44 @@
+doctype html 
+head
+    title Edit Question
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0")
+    link(rel="stylesheet", href="/css/edit_question.css")
+body
+    .header 
+        span#back-icon.material-symbols-outlined arrow_back
+        h1 Edit Question
+    .container 
+        .qr-code 
+            span#qr-code
+        form#question-form(method="post")
+            .question
+                textarea(id="question", name="question")
+            .option-a
+                span A
+                input(type="text", id="option-a", name="option-a")
+            .option-b
+                span B
+                input(type="text", id="option-b", name="option-b")
+            .option-c
+                span C
+                input(type="text", id="option-c", name="option-c") 
+            .option-d
+                span D
+                input(type="text", id="option-d", name="option-d")
+            select.level(name="level" id="level" required)
+                option(value="Correct Answer" selected disabled) Level
+                option(value="easy") Easy 
+                option(value="medium") Medium 
+                option(value="hard") Hard 
+                option(value="master") Master
+            select.correct(name="correct-answer" id="correct-answer" required)
+                option(value="Correct Answer" selected disabled) Correct Answer
+                option(value="A") A
+                option(value="B") B 
+                option(value="C") C
+                option(value="D") D
+
+            .actions 
+                button.btn-save(type="submit") Save
+    script(src="/js/edit_question.js")

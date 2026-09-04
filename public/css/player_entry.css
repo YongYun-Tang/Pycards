@@ -1,0 +1,513 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --python-blue: #306998;
+    --python-dark-blue: #164e7c;
+    --python-yellow: #ffd343;
+    --python-light-yellow: #ffe873;
+    --background: #f4f6f8;
+    --white: #ffffff;
+    --text-dark: #2f3740;
+    --text-muted: #6f7780;
+    --input-border: #d8dde3;
+    --error: #ff4d4d;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 211, 67, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(48, 105, 152, 0.25),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f7f9fb,
+            #eef3f7
+        );
+
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 500px;
+}
+
+.entry-session {
+    margin-bottom: 32px;
+    text-align: center;
+
+    animation: slideDown 0.7s ease both;
+}
+
+.title {
+    margin-bottom: 12px;
+
+    font-size: clamp(4rem, 10vw, 6rem);
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.yellow {
+    color: var(--python-yellow);
+    text-shadow: 0 4px 10px rgba(255, 211, 67, 0.25);
+    letter-spacing: 2px;
+}
+
+.blue {
+    color: var(--python-blue);
+    text-shadow: 0 4px 10px rgba(48, 105, 152, 0.2);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    max-width: 380px;
+    margin: 0 auto;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+form {
+    width: 100%;
+    padding: 26px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    background-color: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 45px rgba(48, 105, 152, 0.12),
+        0 8px 18px rgba(0, 0, 0, 0.05);
+
+    backdrop-filter: blur(10px);
+
+    animation: slideUp 0.7s ease 0.15s both;
+}
+
+.input {
+    width: 100%;
+    min-height: 58px;
+    padding: 14px 16px;
+
+    background-color: #fbfcfd;
+    border: 2px solid var(--input-border);
+    border-radius: 9px;
+    outline: none;
+
+    color: var(--text-dark);
+
+    font-size: 1rem;
+    text-align: center;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+.input::placeholder {
+    color: #9aa2ab;
+}
+
+.input:hover {
+    border-color: #bbc4cd;
+}
+
+.input:focus {
+    background-color: var(--white);
+    border-color: var(--python-blue);
+
+    box-shadow: 0 0 0 4px rgba(48, 105, 152, 0.12);
+
+    transform: translateY(-1px);
+}
+
+.input.is-invalid {
+    background-color: #fff5f5;
+    border-color: var(--error);
+
+    animation: shake 0.35s ease;
+}
+
+.input.is-invalid:focus {
+    box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.12);
+}
+
+.btn-enter {
+    position: relative;
+
+    width: 100%;
+    min-height: 58px;
+    padding: 15px 20px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        var(--python-blue),
+        #3c7fb6
+    );
+
+    border: none;
+    border-radius: 9px;
+
+    color: var(--white);
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 9px 20px rgba(48, 105, 152, 0.23);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.btn-enter::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.btn-enter:hover {
+    background-color: var(--python-dark-blue);
+
+    box-shadow: 0 13px 25px rgba(48, 105, 152, 0.3);
+
+    transform: translateY(-2px);
+}
+
+.btn-enter:hover::before {
+    left: 140%;
+}
+
+.btn-enter:active {
+    box-shadow: 0 6px 14px rgba(48, 105, 152, 0.2);
+
+    transform: translateY(0);
+}
+
+.btn-enter:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-loader {
+    display: none;
+
+    width: 21px;
+    height: 21px;
+    margin: auto;
+
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: var(--white);
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+}
+
+.btn-enter.is-loading .btn-text {
+    display: none;
+}
+
+.btn-enter.is-loading .btn-loader {
+    display: block;
+}
+
+/* Animated background */
+
+.background-animation {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: -120px;
+
+    width: 62px;
+    height: 88px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.22);
+    border: 2px solid rgba(48, 105, 152, 0.14);
+    border-radius: 10px;
+
+    color: rgba(48, 105, 152, 0.2);
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    box-shadow: 0 10px 24px rgba(48, 105, 152, 0.06);
+
+    animation-name: floatCard;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.floating-card::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid rgba(48, 105, 152, 0.18);
+}
+
+.floating-card::after {
+    content: "";
+
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid rgba(48, 105, 152, 0.18);
+}
+
+.floating-card:nth-child(1) {
+    left: 6%;
+    animation-duration: 18s;
+    animation-delay: -2s;
+}
+
+.floating-card:nth-child(2) {
+    left: 22%;
+    width: 52px;
+    height: 74px;
+    animation-duration: 22s;
+    animation-delay: -10s;
+}
+
+.floating-card:nth-child(3) {
+    left: 40%;
+    animation-duration: 20s;
+    animation-delay: -6s;
+}
+
+.floating-card:nth-child(4) {
+    left: 59%;
+    width: 55px;
+    height: 78px;
+    animation-duration: 25s;
+    animation-delay: -15s;
+}
+
+.floating-card:nth-child(5) {
+    left: 76%;
+    animation-duration: 19s;
+    animation-delay: -8s;
+}
+
+.floating-card:nth-child(6) {
+    left: 91%;
+    width: 50px;
+    height: 72px;
+    animation-duration: 23s;
+    animation-delay: -13s;
+}
+
+@keyframes floatCard {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-125vh) rotate(18deg);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        align-items: center;
+        padding: 55px 18px 30px;
+        overflow-y: auto;
+    }
+
+    .container {
+        max-width: 420px;
+    }
+
+    .entry-session {
+        margin-bottom: 28px;
+    }
+
+    .title {
+        font-size: 4rem;
+        letter-spacing: -3px;
+    }
+
+    .subtitle {
+        max-width: 320px;
+        padding: 0 10px;
+        font-size: 0.92rem;
+    }
+
+    form {
+        padding: 22px 18px;
+        border-radius: 13px;
+    }
+
+    .input,
+    .btn-enter {
+        min-height: 54px;
+    }
+
+    .floating-card {
+        width: 45px;
+        height: 64px;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body {
+        padding: 40px 14px 25px;
+    }
+
+    .title {
+        font-size: 3.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.86rem;
+    }
+
+    form {
+        padding: 18px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

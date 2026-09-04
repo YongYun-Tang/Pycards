@@ -1,0 +1,21 @@
+doctype html 
+html 
+    head 
+        title Reading Room 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0")
+        link(rel="stylesheet", href="/css/reading_room.css")
+    body 
+        audio#countdown-sound(loop)
+            source(src="/audio/countdown_sound.mp3" type="audio/mpeg") 
+        .container
+            h2 Reading Room 
+            span#level
+
+            .reading-time 
+                #time-bar 
+                span.material-symbols-outlined nest_clock_farsight_analog
+                span#time-text
+
+            #question
+    script(src="/js/reading_room.js")

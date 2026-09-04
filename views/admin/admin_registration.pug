@@ -1,0 +1,38 @@
+doctype html 
+head
+    title Admin Registration
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0")
+    link(rel="stylesheet", href="/css/admin_registration.css")
+body
+    h1.title 
+        span.yellow Py
+        span.blue Cards
+    .container
+        h2 Register
+        form#register-form(method="post")
+            // Username Input
+            .form-group 
+                label(for="username") Username
+                .input-wrapper
+                    span.material-symbols-outlined account_circle
+                    input(type="text", id="username", name="username", placeholder="Enter your username", required)
+                
+            // Password Input
+            .form-group
+                label(for="password") Password 
+                .input-wrapper
+                    span.material-symbols-outlined lock
+                    input(type="password", id="password", name="password", placeholder="Enter your password", required)
+
+            #error-message 
+
+            .password-strength 
+                p Password Strength: <span id="strength-label"></span>
+                .strength-meter 
+                    .strength-bar
+
+            // Actions
+            .actions
+                button.btn-register(type="submit") Register
+    script(src="/js/admin_registration.js")

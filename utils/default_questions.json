@@ -1,0 +1,402 @@
+[
+    {
+        "qr_code": "QR001",
+        "question": "What does a function do in Python?",
+        "option_A": "Stores data",
+        "option_B": "Repeats code",
+        "option_C": "Defines reusable code",
+        "option_D": "Ends program",
+        "correct_answer": "C",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR002",
+        "question": "Which keyword defines a function?",
+        "option_A": "func",
+        "option_B": "define",
+        "option_C": "def",
+        "option_D": "function",
+        "correct_answer": "C",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR003",
+        "question": "What symbol ends a function definition line?",
+        "option_A": ";",
+        "option_B": ":",
+        "option_C": "{}",
+        "option_D": "()",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR004",
+        "question": "What is a function name?",
+        "option_A": "Variable",
+        "option_B": "Identifier",
+        "option_C": "Keyword",
+        "option_D": "Operator",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR005",
+        "question": "Which is a valid function name?",
+        "option_A": "1func",
+        "option_B": "func-1",
+        "option_C": "myFunc",
+        "option_D": "func()",
+        "correct_answer": "C",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR006",
+        "question": "What is inside parentheses in function definition?",
+        "option_A": "Output",
+        "option_B": "Parameters",
+        "option_C": "Loop",
+        "option_D": "Class",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR007",
+        "question": "What does return do?",
+        "option_A": "Ends loop",
+        "option_B": "Output value",
+        "option_C": "Starts function",
+        "option_D": "Prints text",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR008",
+        "question": "Which function prints output?",
+        "option_A": "input()",
+        "option_B": "print()",
+        "option_C": "return()",
+        "option_D": "def()",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR009",
+        "question": "What is a function call?",
+        "option_A": "Creating function",
+        "option_B": "Using function",
+        "option_C": "Deleting function",
+        "option_D": "Naming function",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR010",
+        "question": "What is indentation used for?",
+        "option_A": "Styling",
+        "option_B": "Grouping code",
+        "option_C": "Naming",
+        "option_D": "Importing",
+        "correct_answer": "B",
+        "levels": "easy"
+    },
+    {
+        "qr_code": "QR011",
+        "question": "What is the correct syntax to define a function in Python?",
+        "option_A": "function myFunc():",
+        "option_B": "def myFunc():",
+        "option_C": "create myFunc():",
+        "option_D": "func myFunc():",
+        "correct_answer": "B",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR012",
+        "question": "What will this code output?\ndef add(a, b=5):\n   return a + b\n\nprint(add(3))",
+        "option_A": "3",
+        "option_B": "5",
+        "option_C": "8",
+        "option_D": "Error",
+        "correct_answer": "C",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR013",
+        "question": "Which statement about function parameters is TRUE?",
+        "option_A": "Default parameters must come before non-default parameters",
+        "option_B": "Non-default parameters must come before default parameters",
+        "option_C": "Parameters must always have default values",
+        "option_D": "Python does not support default parameters",
+        "correct_answer": "B",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR014",
+        "question": "What is the output of the following code?\ndef func(x):\n   x = x + 5\n   return x\n\ny = 10\nfunc(y)\nprint(y)",
+        "option_A": "10",
+        "option_B": "15",
+        "option_C": "5",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR015",
+        "question": "What does the return statement do in a function?",
+        "option_A": "Ends the program",
+        "option_B": "Prints a value",
+        "option_C": "Sends a value back to the caller",
+        "option_D": "Repeats the function",
+        "correct_answer": "C",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR016",
+        "question": "What is the output of the following code?\ndef test():\n   print(\"Hello\")\n\nresult = test()\nprint(result)",
+        "option_A": "Hello",
+        "option_B": "None",
+        "option_C": "Hello None",
+        "option_D": "Error",
+        "correct_answer": "C",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR017",
+        "question": "Which of the following is an example of a function call?",
+        "option_A": "def myFunc():",
+        "option_B": "return myFunc",
+        "option_C": "myFunc()",
+        "option_D": "function myFunc",
+        "correct_answer": "C",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR018",
+        "question": "What will happen if a function does not have a return statement?",
+        "option_A": "It returns 0",
+        "option_B": "It returns None",
+        "option_C": "It gives an error",
+        "option_D": "It repeats execution",
+        "correct_answer": "B",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR019",
+        "question": "What is the output of the following code?\ndef multiply(a, b):\n   return a * b\n\nprint(multiply(2, 3))",
+        "option_A": "5",
+        "option_B": "6",
+        "option_C": "23",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR020",
+        "question": "Which of the following best describes a function?",
+        "option_A": "A loop structure",
+        "option_B": "A reusable block of code",
+        "option_C": "A variable container",
+        "option_D": "A conditional statement",
+        "correct_answer": "B",
+        "levels": "medium"
+    },
+    {
+        "qr_code": "QR021",
+        "question": "What will be the output of the following code?\ndef func(a, L=[]):\n   L.append(a)\n   return L\n\nprint(func(1))\nprint(func(2))",
+        "option_A": "[1] and [2]",
+        "option_B": "[1] and [1, 2]",
+        "option_C": "[1] and [2, 1]",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR022",
+        "question": "What is the output?\ndef foo(x):\n   x += 1\n   return x\n\nx = 5\nfoo(x)\nprint(x)",
+        "option_A": "5",
+        "option_B": "6",
+        "option_C": "Error",
+        "option_D": "None",
+        "correct_answer": "A",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR023",
+        "question": "What does this code print?\ndef outer():\n   x = \"outer\"\n   def inner():\n      nonlocal x\n      x = \"inner\"\n   inner()\n   return x\n\nprint(outer())",
+        "option_A": "outer",
+        "option_B": "inner",
+        "option_C": "None",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR024",
+        "question": "What will happen?\ndef func(a, b, c=5):\n   return a + b + c\n\nprint(func(1, c=3, b=2))",
+        "option_A": "6",
+        "option_B": "8",
+        "option_C": "Error",
+        "option_D": "10",
+        "correct_answer": "A",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR025",
+        "question": "What is the output?\ndef f(a, b=[]):\n   b.append(a)\n   return b\n\nprint(f(1))\nprint(f(2, []))\nprint(f(3))",
+        "option_A": "[1], [2], [1, 3]",
+        "option_B": "[1], [2], [3]",
+        "option_C": "[1], [2], [3, 1]",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR026",
+        "question": "What does the following return?\ndef func(x, y=2, z=3):\n   return x + y * z\n\nprint(func(2, z=4))",
+        "option_A": "10",
+        "option_B": "8",
+        "option_C": "6",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR027",
+        "question": "What is the output?\ndef func(a, b, *args):\n   return a, b, args\n\nprint(func(1, 2, 3, 4))",
+        "option_A": "(1, 2, [3, 4])",
+        "option_B": "(1, 2, (3, 4))",
+        "option_C": "(1, 2, 3, 4)",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR028",
+        "question": "What will be printed?\ndef func(**kwargs):\n   kwargs\n\nprint(func(a=1, b=2)[\"a\"])",
+        "option_A": "1",
+        "option_B": "2",
+        "option_C": "{\"a\": 1}",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR029",
+        "question": "What is the result?\ndef func(a, b):\n   return a ** b\n\nprint(func(b=2, a=3))",
+        "option_A": "6",
+        "option_B": "9",
+        "option_C": "Error",
+        "option_D": "8",
+        "correct_answer": "B",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR030",
+        "question": "What will be this output?\ndef func():\n   try:\n      return 1\n   finally:\n      return 2\n\nprint(func())",
+        "option_A": "1",
+        "option_B": "2",
+        "option_C": "None",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "hard"
+    },
+    {
+        "qr_code": "QR031",
+        "question": "What will be the output?\ndef func(x, y=lambda z: z * 2):\n   return y(x)\n\nprint(func(3))",
+        "option_A": "3",
+        "option_B": "6",
+        "option_C": "Error",
+        "option_D": "None",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR032",
+        "question": "What is the output?\ndef func(a, b=[]):\n   b.append(a)\n   return b\n\nx = func(1)\ny = func(2)\nz = func(3, [])\n\nprint(x, y, z)",
+        "option_A": "[1] [1,2] [3]",
+        "option_B": "[1,2] [1,2] [3]",
+        "option_C": "[1] [2] [3]",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR033",
+        "question": "What does this print?\ndef outer():\n   funcs = []\n   for i in range(3):\n      def inner():\n         return i\n      funcs.append(inner)\n   return funcs\n\nf1, f2, f3 = outer()\nprint(f1(), f2(), f3())",
+        "option_A": "0 1 2",
+        "option_B": "2 2 2",
+        "option_C": "0 0 0 ",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR034",
+        "question": "What will be the output?\ndef func(a, b, /, c, *, d):\n   return a + b + c + d\n\nprint(func(1, 2, 3, d=4))",
+        "option_A": "10",
+        "option_B": "Error",
+        "option_C": "9",
+        "option_D": "8",
+        "correct_answer": "A",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR035",
+        "question": "What is the result?\ndef func(x):\n   try:\n      return x\n   finally:\n      x += 1\n\nprint(func(5))",
+        "option_A": "5",
+        "option_B": "6",
+        "option_C": "None",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR036",
+        "question": "What is the output?\ndef func(x, lst=None):\n   if lst is None:\n      lst = []\n   lst.append(x)\n   return lst\n\nprint(func(1))\n\nprint(func(2))",
+        "option_A": "[1] and [1,2]",
+        "option_B": "[1] and [2]",
+        "option_C": "[1,2] and [1,2]",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR037",
+        "question": "What is the output?\ndef func():\n   return [lambda x: x*i for i in range(3)]\n\nf1, f2, f3 = func()\nprint(f1(2), f2(2), f3(2))",
+        "option_A": "0 2 4",
+        "option_B": "4 4 4",
+        "option_C": "0 0 0",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR038",
+        "question": "What happens here?\ndef func(a: int, b: int) -> int:\n   return a + b\n\nprint(func(\"1\", \"2\"))",
+        "option_A": "3",
+        "option_B": "12",
+        "option_C": "Error",
+        "option_D": "None",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR039",
+        "question": "What is the output?\ndef func(*args, **kwargs):\n   return len(args) + len(kwargs)\n\nprint(func(1, 2, a=3, b=4)",
+        "option_A": "2",
+        "option_B": "4",
+        "option_C": "3",
+        "option_D": "Error",
+        "correct_answer": "B",
+        "levels": "master"
+    },
+    {
+        "qr_code": "QR040",
+        "question": "What will be printed?\ndef func(x):\n   if x == 0:\n      return 0\n   return x + func(x-1)\n\nprint(func(3))",
+        "option_A": "6",
+        "option_B": "3",
+        "option_C": "0",
+        "option_D": "Error",
+        "correct_answer": "A",
+        "levels": "master"
+    }
+]

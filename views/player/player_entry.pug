@@ -1,0 +1,29 @@
+doctype html 
+head
+    title Player Entry
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/player_entry.css")
+body
+    audio#background-audio(loop)
+        source(src="/audio/background_audio.mp3" type="audio/mpeg")
+    .background-animation(aria-hidden="true")
+        span.floating-card QR 
+        span.floating-card QR 
+        span.floating-card QR 
+        span.floating-card QR
+        span.floating-card QR 
+        span.floating-card QR 
+
+    .container
+        .entry-session
+            h1.title 
+                span.yellow Py
+                span.blue Cards
+            p.subtitle Join a game session and test your Python knowledge
+        form#player-entry(method="post")
+            input.input(type="text", id="username", placeholder="Username", required)   
+            input.input(type="text", id="session-code", placeholder="Session Code", required)
+            button.btn-enter(type="submit")
+                span.btn-text Enter Session
+                span.btn-loader(aria-hidden="true")
+    script(src="/js/player_entry.js")

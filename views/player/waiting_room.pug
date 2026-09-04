@@ -1,0 +1,23 @@
+doctype html
+head
+    title Waiting Room
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/waiting_room.css")
+body 
+    audio#background-audio(loop)
+        source(src="/audio/background_audio.mp3" type="audio/mpeg")
+    .container
+        h2 Waiting Room
+
+        p.session-code
+            span#session-code
+
+        h3#welcome-text
+
+        p.waiting-text Waiting other players to join
+            span#dots .
+
+        p.players-count
+            span#players-count 0 players joined
+
+    script(src="/js/waiting_room.js")

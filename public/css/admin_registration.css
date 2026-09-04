@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --python-blue: #306998;
+    --python-dark-blue: #164e7c;
+    --python-yellow: #ffd343;
+    --text-dark: #2f3740;
+    --text-muted: #4a5568;
+    --white: #ffffff;
+    --error: #ca4747;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        -45deg,
+        #f4f6f8,
+        #eef4f8,
+        #fff9df,
+        #f4f6f8
+    );
+
+    background-size: 300% 300%;
+    animation: backgroundMove 12s ease infinite;
+
+    color: var(--text-muted);
+    font-family: Arial, sans-serif;
+}
+
+h1.title {
+    margin-bottom: 35px;
+
+    font-size: 4.8rem;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 2px;
+
+    text-shadow: 0 4px 10px rgba(48, 105, 152, 0.12);
+
+    animation: titleEntrance 0.6s ease-out;
+}
+
+.yellow {
+    color: var(--python-yellow);
+}
+
+.blue {
+    color: var(--python-blue);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 28px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.97),
+        rgba(245, 249, 252, 0.97)
+    );
+
+    border: 1px solid rgba(48, 105, 152, 0.12);
+    border-radius: 16px;
+
+    box-shadow:
+        0 16px 36px rgba(48, 105, 152, 0.14),
+        0 5px 14px rgba(0, 0, 0, 0.08);
+
+    animation: containerEntrance 0.6s ease-out;
+}
+
+h2 {
+    margin-bottom: 24px;
+
+    color: var(--python-blue);
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-dark);
+
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper span {
+    position: absolute;
+
+    left: 13px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7d8995;
+
+    pointer-events: none;
+
+    font-size: 1.3rem;
+
+    transition: color 0.2s ease;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 48px;
+
+    padding: 10px 12px 10px 43px;
+
+    background-color: #ffffff;
+    color: var(--text-dark);
+
+    border: 2px solid #d6dde4;
+    border-radius: 9px;
+
+    font-size: 1rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #9aa3ad;
+}
+
+.input-wrapper input:hover {
+    border-color: #b9c5cf;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+
+    background-color: #ffffff;
+
+    border-color: var(--python-blue);
+
+    box-shadow: 0 0 0 4px rgba(48, 105, 152, 0.12);
+}
+
+.input-wrapper:focus-within span {
+    color: var(--python-blue);
+}
+
+#error-message {
+    margin: 4px 0 14px;
+
+    color: var(--error);
+
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.password-strength {
+    margin-top: 6px;
+    margin-bottom: 22px;
+    padding: 14px;
+
+    background-color: rgba(48, 105, 152, 0.05);
+
+    border: 1px solid rgba(48, 105, 152, 0.1);
+    border-radius: 10px;
+}
+
+.password-strength p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+#strength-label {
+    color: var(--python-blue);
+    font-weight: bold;
+}
+
+.strength-meter {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    background-color: #e6ebf0;
+
+    border-radius: 10px;
+
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.strength-bar {
+    width: 0;
+    height: 100%;
+
+    background-color: #d9534f;
+
+    border-radius: inherit;
+
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 8px;
+}
+
+.btn-register {
+    width: 200px;
+    min-height: 48px;
+    padding: 12px 20px;
+
+    background: linear-gradient(
+        135deg,
+        var(--python-blue),
+        #3c7fb6
+    );
+
+    color: var(--white);
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 16px rgba(48, 105, 152, 0.2);
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-register:hover {
+    background: linear-gradient(
+        135deg,
+        var(--python-dark-blue),
+        var(--python-blue)
+    );
+
+    box-shadow: 0 10px 20px rgba(48, 105, 152, 0.28);
+
+    transform: translateY(-2px);
+}
+
+.btn-register:active {
+    transform: translateY(0);
+}
+
+.btn-register:focus-visible {
+    outline: 3px solid rgba(48, 105, 152, 0.25);
+    outline-offset: 2px;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes titleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes containerEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        justify-content: flex-start;
+        padding: 55px 14px 25px;
+    }
+
+    h1.title {
+        margin-bottom: 35px;
+
+        font-size: 4rem;
+    }
+
+    .container {
+        max-width: 420px;
+        padding: 23px 18px;
+    }
+
+    h2 {
+        margin-bottom: 22px;
+
+        font-size: 1.7rem;
+    }
+
+    .btn-register {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    body {
+        padding: 45px 10px 20px;
+    }
+
+    h1.title {
+        font-size: 3.3rem;
+    }
+
+    .container {
+        padding: 20px 14px;
+    }
+
+    .password-strength {
+        padding: 12px;
+    }
+
+    .password-strength p {
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    h1.title,
+    .container,
+    .btn-register,
+    .strength-bar {
+        animation: none;
+        transition: none;
+    }
+}

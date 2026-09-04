@@ -1,0 +1,15 @@
+doctype html 
+html 
+    head 
+        title Scan QR 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/scan_QR.css")
+    body 
+        .container
+            h1 Scan Question QR 
+            #QR-reader
+            p#scan-result Waiting for QR code scan
+                span#dots .
+        
+        script(src="https://unpkg.com/html5-qrcode")
+        script(src="/js/scan_QR.js")
