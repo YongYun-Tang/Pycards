@@ -17,7 +17,7 @@ exports.getQuestionById = (questionId, adminId) => {
 
         db.query(sql, [questionId, adminId], (error, results) => {
             if (error) return reject(error);
-            resolve(results);
+            resolve(results[0]);
         });
     });
 };

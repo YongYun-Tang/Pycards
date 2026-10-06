@@ -36,7 +36,7 @@ exports.getQuestionById = async (req, res) => {
         const question = await questionModel.getQuestionById(questionId, adminId);
 
         res.json({
-            question: question[0]
+            question
         });
     } catch (error) {
         res.status(500).json({

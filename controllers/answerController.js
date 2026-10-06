@@ -1,4 +1,8 @@
 const answerModel = require("../models/answerModel");
+const playerModel = require("../models/playerModel");
+const questionModel = require("../models/questionModel");
+const sessionModel = require("../models/sessionModel");
+const sessionQuestionModel = require("../models/sessionQuestionModel");
 
 exports.startAnswer = async (req, res) => {
     try {
@@ -19,14 +23,59 @@ exports.startAnswer = async (req, res) => {
             });
         }
 
-        const answer = await answerModel.startAnswer(playerId, questionId);
+        const player = await playerModel.getPlayerById(playerId);
+
+        if (!player) {
+            return res.status(404).json({
+                success: false,
+                message: "Player not found"
+            });
+        }
+
+        const session = await sessionModel.getSessionById(player.session_id);
+
+        if (!session) {
+            return res.status(404).json({
+                success: false,
+                message: "Session not found"
+            });
+        }
+
+        const question = await questionModel.getQuestionById(questionId, session.admin_id);
+
+        if (!question) {
+            return res.status(404).json({
+                success: false,
+                message: "Question not found"
+            });
+        }
+
+        console.log("Question:", question);
+
+        const sessionQuestion =
+            await sessionQuestionModel.getOrCreateSessionQuestion(
+                player.session_id,
+                question
+            );
+
+        console.log("Session Question:", sessionQuestion);
+
+        const answer = await answerModel.startAnswer(
+            player.player_id,
+            question.question_id,
+            sessionQuestion.session_question_id
+        );
+
+        console.log("Answer:", answer);
 
         return res.status(201).json({
             success: true,
             message: "Answer attempt started",
-            answer: answer
+            answer
         });
-    } catch (error) {
+    } catch (error) {     
+        console.error("START ANSWER ERROR:", error);
+
         return res.status(500).json({
             success: false,
             error: error.message

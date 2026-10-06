@@ -67,6 +67,10 @@ exports.loadLeaderboard = async (req, res) => {
 
             return {...player, rank};
         });
+
+        res.json({
+            players: rankedPlayers
+        })
     } catch (error) {
         res.status(500).json({
             error: error.message

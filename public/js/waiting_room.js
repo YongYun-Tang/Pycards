@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const code = urlParams.get('code');
 
     if (code && sessionCode) {
-        sessionCode.innerText = code;
+        sessionCode.innerText = code.toUpperCase();
     } else {
         sessionCode.innerText = "No session code";
     }

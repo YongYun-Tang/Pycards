@@ -69,6 +69,10 @@ app.get('/reset_password', (req, res) => {
     res.render("admin/reset_password");
 })
 
+app.get('/session_history', (req, res) => {
+    res.render("admin/session_history");
+})
+
 app.get("/start_session", (req, res) => {
     res.render("admin/start_session");
 })
